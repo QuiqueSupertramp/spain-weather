@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colores */
+  --primario: #ffffff;
+  --azul-claro: #b8bdcc;
+  --azul-oscuro: #0a4d52;
+
+  /* Tamaños */
+  --fontSize1: 1.1rem;
+  --fontsize2: 0.9rem;
+
+  /* Fuentes */
+  --openSans: "Open Sans", sans-serif;
+  --montserrat: "Montserrat", sans-serif;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+.fontSize2 {
+  font-size: var(--fontsize2);
+}
+
+body {
+  overflow: hidden;
+  font-family: var(--openSans);
+  font-size: var(--fontSize1);
+  background: linear-gradient(180deg, #399ba2 0%, #0a4d52 90.58%);
+  height: 100vh;
+}
+
+
+/* Barra de localización */
+
+header {
+  position: relative;
+  padding: 0 1rem;
+  width: 100%;
+  min-height: 70px;
+  background-color: var(--azul-claro);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+
+nav img {
+  margin: 0 1rem 0 0;
+  width: 40px;
+  height: 40px;
+}
+
+#search {
+  text-decoration-line: none;
+  -moz-text-decoration-line: none;
+  padding-top: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--montserrat);
+  font-size: var(--fontsize1);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+  text-align: left;
+}
+
+#search::placeholder {
+  color: var(--azul-oscuro);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 18px;
+}
+
+
+/* MAIN */
+
+main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "temp" "data" "forecast";
+}
+
+
+/* TEMP */
+
+.temp {
+  grid-area: temp;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.currentTemp {
+  font-size: 96px;
+  font-weight: 900;
+  color: var(--primario);
+  line-height: 96px;
+  font-style: italic;
+}
+
+.feelTemp {
+  font-size: var(--fontsize1);
+  color: var(--azul-oscuro);
+  font-weight: 600;
+}
+
+
+/* DATA */
+
+#data {
+  grid-area: data;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.globalData {
+  width: 80%;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, 33%);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.air,
+.rain,
+.wind {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.airData {
+  display: flex;
+  flex-direction: column;
+}
+
+.rainData,
+.windData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 34%;
+}
+
+.imgTemp,
+.air,
+.rain,
+.wind,
+.minMax {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+  color: var(--primario);
+}
+
+.imgTemp {
+  grid-row: 1;
+  grid-column: 1/5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgTemp img {
+  width: 55px;
+  height: 55px;
+}
+
+.air {
+  grid-row: 1;
+  grid-column: 5/13;
+}
+
+.rain {
+  grid-row: 2/3;
+  grid-column: 1/9;
+}
+
+.wind {
+  grid-row: 3/4;
+  grid-column: 1/9;
+}
+
+.wind img {
+  width: 40px;
+  height: 40px;
+}
+
+.minMax {
+  grid-row: 2/4;
+  grid-column: 9/13;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.min,
+.max {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
+  font-size: 20px;
+}
+
+
+/* FORECAST */
+
+#forecast {
+  grid-area: forecast;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.globalForecast {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nextDay1 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 15% 60% 25%;
+  color: var(--primario);
+}
+
+.nextDay1 img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dayForecast {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.minMaxForecast {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+}
+
+
+/* OPTIONS AND LOADER */
+
+.options {
+  background-color: var(--azul-claro);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  max-height: 200px;
+  outline: none;
+}
+
+.options li {
+  border-bottom: 1px solid var(--azul-oscuro);
+  padding: 0 30px;
+  list-style: none;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.liOptions {
+  width: 100%;
+}
+
+.options span {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.loading {
+  width: 100%;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  gap: 20px;
+  color: var(--primario);
+}
+.loading img {
+  width: 100px;
+  height: 100px;
+}
+
+.none {
+  display: none;
+}
+
+
+
+@media screen and (min-width: 500px) and (min-height:450px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    max-width: 600px;
+    border-radius: 0 0 10px 10px;
+    padding-bottom: 15px;
+  }
+
+  nav {
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  main {
+    max-width: 400px;
+    margin: 0;
+  }
+}
+
+
+@media screen and (max-height: 450px) and (orientation: landscape) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+  }
+
+  header {
+    height: 12vh;
+    max-width: 600px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  main {
+    padding-top: 3rem;
+    width: 100%;
+    grid-template-columns: 23% 38% 39%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "temp data forecast";
+  }
+
+  .options {
+    top: 12vh;
+  }
+}

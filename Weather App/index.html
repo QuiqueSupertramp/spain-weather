@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="loading">
+      <img src="img/loading.svg" alt="" />
+      <p>Recopilando datos...</p>
+    </div>
+
+    <header id="header">
+      <nav>
+        <img src="img/ubicacion.svg" alt="" />
+        <input
+          type="text"
+          id="search"
+          placeholder="Selecciona una población..."
+          value="Barcelona"
+          autocomplete="off"
+        />
+      </nav>
+      <div class="options"></div>
+    </header>
+
+    <main>
+      <section class="temp none">
+        <p class="currentTemp"></p>
+        <p class="feelTemp"></p>
+      </section>
+
+      <section id="data">
+        <div class="globalData none">
+          <div class="imgTemp">
+            <img id="imgTemp" src="" alt="" />
+          </div>
+          <div class="air">
+            <img src="img/leaf.svg" alt="" />
+            <div class="airData">
+              <p class="fontSize2">Calidad del aire</p>
+              <p id="airText"></p>
+            </div>
+          </div>
+          <div class="rain">
+            <img src="img/gota.svg" alt="" />
+            <div class="rainData">
+              <p class="fontSize2">Lluvia</p>
+              <p id="rainText"></p>
+            </div>
+          </div>
+          <div class="wind">
+            <img src="img/molinos de viento.png" alt="" />
+            <div class="windData">
+              <p class="fontSize2">Viento</p>
+              <p id="windText"></p>
+            </div>
+          </div>
+          <div class="minMax">
+            <div class="min">
+              <img src="img/minmax.svg" alt="" />
+              <p id="minText"></p>
+            </div>
+            <div class="max">
+              <img src="img/minmax.svg" alt="" />
+              <p id="maxText"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="forecast">
+        <div class="globalForecast none"></div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
